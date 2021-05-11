@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'profiles',
     'sslserver',
+    'registration',
+
    
 
 ]
@@ -151,3 +153,6 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 SECURE_SSL_REDIRECT = True
 SESSION_COOKIE_SECURE = False
 CSRF_COOKIE_SECURE = True
+
+
+AUTH_USER_MODEL = 'registration.User'
