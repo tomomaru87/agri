@@ -1,14 +1,10 @@
-from django.db import models
+from django.db import migrations, models
 
-# class usernames(models.Model):
-#     name = models.CharField(max_length=50,null=False,blank=False,unique=True)
+class Migration(migrations.Migration):
 
-#     def __str__(self):
-#         return self.name
+    dependencies = [('migrations', '0001_initial')]
 
-# class post(models.Model):
-#     created = models.DateTimeField(auto_now_add=True,editable=False,blank=False,null=False)
-
-#     updated = models.DateTimeField(auto_now=True,editable=False,blank=False,null=False)
-
-#     title = models.CharField(max_length=)
+    operations = [
+        migrations.DeleteModel('Tribble'),
+        migrations.AddField('Author', 'rating', models.IntegerField(default=0)),
+    ]
