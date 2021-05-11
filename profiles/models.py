@@ -1,4 +1,6 @@
 from django.db import models
+from django.views.generic.edit import CreateView
+from django.urls import reverse_lazy
 
 class Category(models.Model):
     name = models.CharField(max_length=50,null=False,blank=False,unique=True)
@@ -32,4 +34,7 @@ class post(models.Model):
 
     def __str__(self):
         return self.title
+    
+    def get_absolute_url(self):
+        return reverse_lazy("profiles_detail" , args = [self.id])
     

@@ -1,0 +1,14 @@
+{%extends 'base.html' %}
+
+{%block header %}
+{% include 'nav.html'%}
+<h2>プロフィール作成</h2>
+<form method="post">
+{% csrf_token %}
+{{ form.as_p }}
+<input type = "submit" value="投稿"　class ="btn btn-primary"/>
+
+</form>
+
+{% include 'footer.html'%}
+{% endblock header %}

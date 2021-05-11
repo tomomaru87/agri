@@ -89,9 +89,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'agri', #　作成したデータベース名
-        'USER': 'root', # ログインユーザー名
-        'PASSWORD': 'root',
-        'HOST': '',
+        'USER':  'user' , # ログインユーザー名
+        'PASSWORD': 'password',
+        'HOST': 'localhost',
         'PORT': '3306',
     }
 }
