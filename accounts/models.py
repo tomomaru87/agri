@@ -1,10 +1,6 @@
-from django.db import migrations, models
+from django.db import models
+from django.contrib.auth.models import AbstractUser
 
-class Migration(migrations.Migration):
 
-    dependencies = [('migrations', '0001_initial')]
-
-    operations = [
-        migrations.DeleteModel('Tribble'),
-        migrations.AddField('Author', 'rating', models.IntegerField(default=0)),
-    ]
+class User(AbstractUser):
+    email = models.EmailField('メールアドレス', unique=True)

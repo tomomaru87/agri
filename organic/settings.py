@@ -32,7 +32,7 @@ ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'accounts',
-    'django.contrib.admin',
+    # 'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'profiles',
     'sslserver',
-    'registration',
+    'anymail',
+ 
 
    
 
@@ -142,7 +143,7 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 LOGIN_URL = "/login/"
 LOGIN_REDIRECT_URL = "/home/"
@@ -155,4 +156,14 @@ SESSION_COOKIE_SECURE = False
 CSRF_COOKIE_SECURE = True
 
 
-AUTH_USER_MODEL = 'registration.User'
+AUTH_USER_MODEL = 'accounts.User'
+
+FRONTEND_URL = "https://127.0.0.1:8000/home/"
+
+ANYMAIL = {
+    "MAILGUN_API_KEY": "key-f041daea0a76f5f3bab20ee4662d725b",
+    "MAILGUN_SENDER_DOMAIN": 'sandbox33922f35903b4159a573cd5ad926c0fb.mailgun.org',
+}
+EMAIL_BACKEND = "anymail.backends.mailgun.EmailBackend"
+DEFAULT_FROM_EMAIL = "otomo@se-a.jp"
+SERVER_EMAIL = "server@example.com"
